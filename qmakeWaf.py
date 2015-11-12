@@ -72,7 +72,7 @@ class QmakeProjectBuilder:
                     features = project_features,
             )
 
-def options(opt):
+def qmake_options(opt):
     opt.load('compiler_cxx')
 
 def qmake_configure(conf):
@@ -80,7 +80,7 @@ def qmake_configure(conf):
     conf.env['ui_PATTERN'] = "ui_%s.h"
 
 def qmake_build(projectFile, bld):
-    qproject = qmake.project('analytics.pro',qmake_executable=bld.env.QMAKE[0])
+    qproject = qmake.project(projectFile,qmake_executable=bld.env.QMAKE[0])
 
     @extension('.ui')
     def create_uic_task(self, node):
