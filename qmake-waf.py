@@ -75,7 +75,7 @@ class QmakeProjectBuilder:
 def options(opt):
     opt.load('compiler_cxx')
 
-def configure(conf):
+def qmake_configure(conf):
     conf.load('compiler_cxx qt5')
     conf.env['ui_PATTERN'] = "ui_%s.h"
 
